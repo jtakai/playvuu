@@ -1,0 +1,45 @@
+//
+// Prefix header for all source files of the 'playvuu' target in the 'playvuu' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "NSBundle+Loading.h"
+    #import "UIView+Utils.h"
+    #import "UIView+Frame.h"
+    #import "UIViewController+Utils.h"
+    #import "UIColor+Utils.h"
+    #import "UIFont+Utils.h"
+#endif
+
+#if DEBUG
+#define TRACE(format, ...) do { NSLog((@"%@:%d [%s] " format), [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__); } while (0);
+#else
+#define TRACE(...) do { } while (0);
+#endif
+
+#if DEBUG
+#define ASSERT(condition) NSCAssert(condition, @"%@", [NSString stringWithUTF8String:#condition])
+#else
+#define ASSERT(condition) (void)NULL
+#endif
+
+#if DEBUG
+#define ASSERT_CLASS(object, aClass) ASSERT([object isKindOfClass:[aClass class]])
+#else
+#define ASSERT_CLASS(object, aClass) (void)NULL
+#endif
+
+#if DEBUG
+#define ASSERT_CLASS_OR_NIL(object, aClass) ASSERT(!object || [object isKindOfClass:[aClass class]])
+#else
+#define ASSERT_CLASS_OR_NIL(object, aClass) (void)NULL
+#endif
+

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mGd-o9-VJh">
+    <dependencies>
+        <deployment version="1552" defaultVersion="1536" identifier="iOS"/>
+        <development version="5000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Socializer View Controller - Socializer-->
+        <scene sceneID="Kq1-ep-UgT">
+            <objects>
+                <viewController storyboardIdentifier="SocializerRoot" title="Socializer" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mGd-o9-VJh" customClass="SocializerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5qa-nH-SXU"/>
+                        <viewControllerLayoutGuide type="bottom" id="aNn-93-LaN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SF1-dC-Kff">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Update Status" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hG7-zZ-sxT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XdY-gO-nja"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mGd-o9-VJh" id="6ls-Fv-bH0"/>
+                                </connections>
+                            </textField>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeQ-sr-DO6">
+                                <rect key="frame" x="0.0" y="94" width="320" height="410"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oqM-p1-Yyt">
+                                <rect key="frame" x="0.0" y="30" width="320" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="INBOX"/>
+                                    <segment title="OUTBOX"/>
+                                </segments>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="toggleContent:" destination="mGd-o9-VJh" eventType="valueChanged" id="uVD-l7-uEC"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTx-ba-BUE">
+                                <rect key="frame" x="265" y="61" width="55" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="three_dot.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleContent:" destination="mGd-o9-VJh" eventType="touchUpInside" id="w2C-I0-op8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUL-Qb-1Hs">
+                                <rect key="frame" x="12" y="66" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="newmsg_socializer_button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showComposer:" destination="mGd-o9-VJh" eventType="touchUpInside" id="7H8-Rp-uF8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oqM-p1-Yyt" firstAttribute="trailing" secondItem="hG7-zZ-sxT" secondAttribute="trailing" id="3oO-Kj-VR7"/>
+                            <constraint firstItem="hG7-zZ-sxT" firstAttribute="top" secondItem="SF1-dC-Kff" secondAttribute="top" id="4SC-3g-Dod"/>
+                            <constraint firstItem="hG7-zZ-sxT" firstAttribute="leading" secondItem="oqM-p1-Yyt" secondAttribute="leading" id="LcQ-NA-oc1"/>
+                            <constraint firstAttribute="trailing" secondItem="ZeQ-sr-DO6" secondAttribute="trailing" id="Soa-2A-Nfn"/>
+                            <constraint firstItem="ZeQ-sr-DO6" firstAttribute="trailing" secondItem="oqM-p1-Yyt" secondAttribute="trailing" id="aOP-cM-rGe"/>
+                            <constraint firstItem="ZeQ-sr-DO6" firstAttribute="top" secondItem="SF1-dC-Kff" secondAttribute="top" constant="94" id="fMo-Jb-Vlj"/>
+                            <constraint firstItem="ZeQ-sr-DO6" firstAttribute="leading" secondItem="oqM-p1-Yyt" secondAttribute="leading" id="fOk-W9-Myg"/>
+                            <constraint firstItem="ZeQ-sr-DO6" firstAttribute="bottom" secondItem="SF1-dC-Kff" secondAttribute="bottom" id="rlH-be-Bmg"/>
+                            <constraint firstItem="oqM-p1-Yyt" firstAttribute="top" secondItem="SF1-dC-Kff" secondAttribute="top" constant="30" id="yIv-Bk-OrI"/>
+                            <constraint firstItem="oqM-p1-Yyt" firstAttribute="leading" secondItem="SF1-dC-Kff" secondAttribute="leading" id="zp7-1N-yt4"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="SOCIALIZER" id="0YL-Nk-EOX">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="ubz-de-F7x">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TN1-K6-8Ms">
+                                <rect key="frame" x="16" y="0.0" width="44" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="menu_button.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMenu:" destination="mGd-o9-VJh" eventType="touchUpInside" id="9Qv-qG-SB1"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bubbleLayer" destination="ZeQ-sr-DO6" id="sWX-9X-cLl"/>
+                        <outlet property="searchField" destination="hG7-zZ-sxT" id="mHR-4T-fKJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p27-lP-LbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968" y="1744"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu_button.png" width="23" height="17"/>
+        <image name="newmsg_socializer_button.png" width="18" height="19"/>
+        <image name="three_dot.png" width="38" height="8"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
